@@ -19,7 +19,7 @@ public class RsaKeyConfig {
 
 
     @Bean
-    private PrivateKey privateKey() throws Exception {
+    public PrivateKey privateKey() throws Exception {
 
             String key = Files.readString(Path.of("src/main/resources/private_key.pem"));
             String privateKeyPEM = key.replace("-----BEGIN PRIVATE KEY-----","")
@@ -35,7 +35,7 @@ public class RsaKeyConfig {
     }
 
     @Bean
-    private PublicKey publicKey () throws Exception {
+    public PublicKey publicKey () throws Exception {
         String key = Files.readString(Path.of("src/main/resources/public_key.pem"));
         String publicKeyPEM = key.replace("-----BEGIN PUBLIC KEY-----","")
                 .replace("-----END PUBLIC KEY-----","")
